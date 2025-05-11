@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import { FaTrash } from 'react-icons/fa';
 function App() {
   const[selectpayment,setSelectpayment] = useState('');
   const [transactionlist,setTransactionlist] = useState([]);
@@ -9,12 +10,18 @@ function App() {
     setSelectpayment(e.target.value);
   }
 
+
   const addtoPayment = (e) =>{
       e.preventDefault()
       setTransactionlist([...transactionlist,{title:title,amount:amount,status:selectpayment}])
       
   }
   
+  const handleDelete = (index) => {
+    const newTransactionList = [...transactionlist];
+    newTransactionList.splice(index, 1);
+    setTransactionlist(newTransactionList);
+  };
 
 
   return (
@@ -25,7 +32,7 @@ function App() {
       </header>
          <div className="content">
          <Balance transactionlist={transactionlist} />
-         <Transaction transactionlist={transactionlist}/>
+         <Transaction transactionlist={transactionlist} handleDelete={handleDelete}/>
          <AddTransaction selectpayment={selectpayment} handleSelectPayment={handleSelectPayment} addtoPayment={addtoPayment} title={title} setTitle={setTitle} amount={amount} setAmount={setAmount}/>
          </div>
      
@@ -66,7 +73,7 @@ function Balance({transactionlist}){
 }
 
 
-function TransactionList({transactionlist}){
+function TransactionList({transactionlist,handleDelete}){
   return(
   
     <>
@@ -74,22 +81,27 @@ function TransactionList({transactionlist}){
       {transactionlist.length === 0 && <p style={{textAlign:'center'}}>No transactions added</p>}
       {transactionlist.length > 0 && <p style={{textAlign:'center'}}>Total Transactions: {transactionlist.length}</p>}
     
-      {transactionlist.map((transaction)=> <li className={transaction.status==='credit' ? 'green' :'red'}>
-        <p className="transactiontitle">{transaction.title}</p>
+      {transactionlist.map((transaction,index)=> <li key={index} className={transaction.status==='credit' ? 'green' :'red'}>
+        <div><p className="transactiontitle">{transaction.title}</p>
         <p className="transactionamount">$ {transaction.amount}</p>
+        </div>
+          <FaTrash  onClick={() => handleDelete(index)} 
+    
+      style={{ justifyContent: 'flex-end',alignItems: 'flex-end', cursor: 'pointer', color: 'red' ,'fontSize':'20px',margin:'7px'}} 
+    />
       </li>)}
     </ul>
     </>
   )
   
 }
-function Transaction({transactionlist}){
+function Transaction({transactionlist, handleDelete}){
   
   return(
     <>
     <div className="transaction" style={{padding:'15px'}}>
     <p className="title"> Transactions Saved</p>
-    <TransactionList transactionlist={transactionlist} />
+    <TransactionList transactionlist={transactionlist} handleDelete={handleDelete} />
     </div>
     </>
   )

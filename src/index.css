@@ -63,12 +63,16 @@ ul {
 ul > li {
     background-color: white;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 2%;
     padding: 7px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
+li  .detail {
+    display: flex;
+    flex-direction: column;
+}
 .transactiontitle{
     color: gray;
     font-size: 12px;
@@ -123,5 +127,5 @@ ul > li {
     height: 30px;
     padding: 2px;
     margin: 5px;
-    
+
 }
