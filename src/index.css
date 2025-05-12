@@ -1,131 +1,128 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: rgba(243, 243, 243, 1);
-    
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: rgba(243, 243, 243, 1);
 }
-*{
-    margin: 2px; 
-    padding:2px;
+* {
+  margin: 2px;
+  padding: 2px;
 }
-.App-header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center    ;
-    padding: 0;
+.App-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
-.App-header p{
-    color:rgba(119, 115, 115, 1);
-}
-
-.content{
-
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    justify-content: flex-start;
-    margin: 2% 20%;
+.App-header p {
+  color: rgba(119, 115, 115, 1);
 }
 
-div .box{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: flex-start;
+  margin: 2% 20%;
 }
 
-.box > div{
-    background-color: white;
-    padding: 60px 100px;
-    border-radius: 10px;
+div .box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 }
 
-.amount{
- 
-    font-size: 30px;
-    font-weight: lighter;
-    padding: 5px;
+.box > div {
+  background-color: white;
+  padding: 60px 100px;
+  border-radius: 10px;
+}
+.box > div {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.amount {
+  font-size: 30px;
+  font-weight: lighter;
+  padding: 5px;
 }
 
-.title{
-    font-size: 20px;
-    font-weight: lighter;
+.title {
+  font-size: 20px;
+  font-weight: lighter;
 }
 
 ul {
-    list-style: none;
-    list-style-type: none;
+  list-style: none;
+  list-style-type: none;
 }
 
 ul > li {
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    margin: 2%;
-    padding: 7px;
-    justify-content: space-between;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+  padding: 7px;
+  justify-content: space-between;
 }
 
-li  .detail {
-    display: flex;
-    flex-direction: column;
+li .detail {
+  display: flex;
+  flex-direction: column;
 }
-.transactiontitle{
-    color: gray;
-    font-size: 12px;
+.transactiontitle {
+  color: gray;
+  font-size: 12px;
 }
 
 .red {
-    border-right: 5px solid red;
-    color: red;
+  border-right: 5px solid red;
+  color: red;
 }
 
 .green {
-    border-right: 5px solid green;
-    color: green;
+  border-right: 5px solid green;
+  color: green;
 }
 
-.paymentform{
-    margin: 2%;
-    padding: 2%;
-    border: 1px solid rgb(216, 216, 216);
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.paymentform {
+  margin: 2%;
+  padding: 2%;
+  border: 1px solid rgb(216, 216, 216);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-.paymentform input{
-    width: 450px;
-    display: block;
-    height: 30px;
-    padding: 2px;
-    margin: 5px;
-    border: 1px solid rgb(216, 216, 216);
-    
+.paymentform input {
+  width: 450px;
+  display: block;
+  height: 30px;
+  padding: 2px;
+  margin: 5px;
+  border: 1px solid rgb(216, 216, 216);
 }
-.paymentform label{
-    font-size: 10px;
-    color: gray;
-}
-
-.paymentform select{
-    width: 450px;
-    display: block;
-    height: 30px;
-    padding: 2px;
-    margin: 5px;
-    border: 1px solid rgb(216, 216, 216);
+.paymentform label {
+  font-size: 10px;
+  color: gray;
 }
 
-.paymentform button{
-    width: 450px;
-    display: block;
-    height: 30px;
-    padding: 2px;
-    margin: 5px;
+.paymentform select {
+  width: 450px;
+  display: block;
+  height: 30px;
+  padding: 2px;
+  margin: 5px;
+  border: 1px solid rgb(216, 216, 216);
+}
 
+.paymentform button {
+  width: 450px;
+  display: block;
+  height: 30px;
+  padding: 2px;
+  margin: 5px;
 }
